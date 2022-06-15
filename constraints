@@ -1,0 +1,52 @@
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    major VARCHAR(20) UNIQUE
+);
+DESCRIBE TABLE Student;
+
+INSERT INTO Student VALUES(1,'Jack','BIOLOGY');
+INSERT INTO Student VALUES(2,'Kate','Sociology');
+
+# Deleting the table 
+
+DROP TABLE Student;
+
+SELECT * FROM Student;
+
+# using DEFAULT
+
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    major VARCHAR(20) DEFAULT 'Undecided'
+);
+
+# using Auto increment
+
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    major VARCHAR(20)  
+);
+
+INSERT INTO Student VALUES(1,'Jack','Biology');
+INSERT INTO Student(name,major) VALUES('Kate','Sociology');
+INSERT INTO Student(name,major) VALUES('John','Phsychology');
+INSERT INTO Student(name,major) VALUES('Chris','Biology');
+INSERT INTO Student(name,major) VALUES('Larry','Sociology');
+
+# here UNIQUE, NOT NULL, DEFAULT, AUTO_INCREMENT are some of the constraints 
+# used while entering the data in table.
+
+
+# update and delete specific rows
+
+UPDATE Student
+SET major='Bio'
+WHERE major='Biology';
+
+
+DELETE FROM Student
+WHERE student_id=1 ;
+
