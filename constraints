@@ -48,5 +48,20 @@ WHERE major='Biology';
 
 
 DELETE FROM Student
-WHERE student_id=1 ;
+WHERE student_id=6 ;
 
+# Query some data from the database
+
+SELECT Student.name,Student.major
+FROM Student
+ORDER BY name ;
+# ORDER BY name DESC;
+
+SELECT Student.name,Student.major
+FROM Student
+WHERE major='Bio' OR major='Sociology'
+ORDER BY major,name DESC;
+
+-- WHERE major='Bio' OR major='Sociology'
+--can also be wru=itten as 
+-- WHERE major IN ('Bio','Sociology')
